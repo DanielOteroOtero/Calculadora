@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <h1>Calculadora</h1>
+
+    <input type="number" id="num1" placeholder="Numero 1">
+    <input type="number" id="num2" placeholder="Numero 2">
+
+    <button onclick="sumar()">Suma</button>
+    <button onclick="restar()">Resta</button>
+    <button onclick="multiplicar()">Multiplicación</button>
+    <button onclick="dividir()">División</button>
+    <button onclick="limpiarResultado()">Limpiar Resultado</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        const num1Input = document.getElementById('num1');
+        const num2Input = document.getElementById('num2');
+        const resultadoP = document.getElementById('resultado');
+
+        const sumar = () => {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            const resultado = num1 + num2;
+            resultadoP.textContent = `Resultado: ${resultado}`;
+        };
+
+        const restar = () => {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            const resultado = num1 - num2;
+            resultadoP.textContent = `Resultado: ${resultado}`;
+        };
+
+        const multiplicar = () => {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            const resultado = num1 * num2;
+            resultadoP.textContent = `Resultado: ${resultado}`;
+        };
+
+        const dividir = () => {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            if (num2  === 0) {
+                resultadoP.textContent = "No se puede dividir por 0";
+            } else {
+                const resultado = num1 / num2;
+                resultadoP.textContent = `Resultado: ${resultado}`;
+            }
+        };
+
+        const limpiarResultado = () => {
+            resultadoP.textContent = "";
+            num1Input.value = "";
+            num2Input.value = "";
+        };
+    </script>
+</body>
+</html>
+
+</body>
+</html>
